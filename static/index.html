@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSense - AI Fashion Stylist</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Style<span class="highlight">Sense</span></h1>
+            <p class="subtitle">Elevate your look with AI-powered fashion analysis.</p>
+        </header>
+
+        <section class="upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <div class="icon-container">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" class="upload-icon">
+                        <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 11L12 8 15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Drag & Drop your outfit here</h3>
+                <p>or <span class="browse-link">browse files</span></p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+            
+            <div id="preview-container" class="preview-container hidden">
+                <img id="image-preview" src="" alt="Outfit Preview">
+                <button id="analyze-btn" class="primary-btn">Analyze Style</button>
+                <button id="reset-btn" class="secondary-btn">Use Different Photo</button>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <div class="result-card">
+                <div class="loader hidden" id="loader">
+                    <div class="spinner"></div>
+                    <p>Consulting the fashion oracle...</p>
+                </div>
+                <div id="analysis-content" class="markdown-body">
+                    <!-- Results will appear here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
